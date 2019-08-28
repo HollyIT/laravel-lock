@@ -6,7 +6,7 @@ use Hollyit\LaravelLock\Lock;
 use Orchestra\Testbench\TestCase;
 use Hollyit\LaravelLock\LaravelLockServiceProvider;
 
-class LockTest extends TestCase
+abstract class LockTest extends TestCase
 {
     protected function getPackageProviders($app)
     {
