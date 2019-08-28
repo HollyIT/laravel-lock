@@ -2,8 +2,8 @@
 
 namespace Hollyit\LaravelLock\Tests\Feature;
 
-use Hollyit\LaravelLock\Tests\LockTest;
 use Illuminate\Support\Facades\DB;
+use Hollyit\LaravelLock\Tests\LockTest;
 
 class DatabaseLock extends LockTest
 {

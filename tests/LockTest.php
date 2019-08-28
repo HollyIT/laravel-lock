@@ -2,9 +2,9 @@
 
 namespace Hollyit\LaravelLock\Tests;
 
-use Hollyit\LaravelLock\LaravelLockServiceProvider;
 use Hollyit\LaravelLock\Lock;
 use Orchestra\Testbench\TestCase;
+use Hollyit\LaravelLock\LaravelLockServiceProvider;
 
 class LockTest extends TestCase
 {
