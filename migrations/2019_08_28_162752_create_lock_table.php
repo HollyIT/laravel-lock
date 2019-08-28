@@ -1,0 +1,39 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateLockTable extends Migration
+{
+    protected function getTable()
+    {
+        return config('lock.drivers.database.table', 'semaphore_lock');
+    }
+
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+
+        Schema::create($this->getTable(), function (Blueprint $table) {
+            $table->string('id', 64)
+                ->primary();
+            $table->string('token', 44);
+            $table->unsignedInteger('expires');
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists($this->getTable());
+    }
+}

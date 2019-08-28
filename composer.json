@@ -1,0 +1,55 @@
+{
+    "name": "hollyit/laravel-lock",
+    "description": "A Laravel wrapper for the Symfony Lock component to provide semaphore style locks on long running processes.",
+    "keywords": [
+        "hollyit",
+        "laravel-lock"
+    ],
+    "homepage": "https://github.com/hollyit/laravel-lock",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Jamie Holly",
+            "email": "jamie@hollyit.net",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1.3",
+        "illuminate/support": "^5.8",
+        "symfony/lock": "^4.3",
+        "ext-pdo": "*"
+    },
+    "require-dev": {
+        "orchestra/testbench": "3.8.*",
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Hollyit\\LaravelLock\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Hollyit\\LaravelLock\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Hollyit\\LaravelLock\\LaravelLockServiceProvider"
+            ],
+            "aliases": {
+                "LaravelLock": "Hollyit\\LaravelLock\\LockFacade"
+            }
+        }
+    }
+}
