@@ -3,11 +3,11 @@
 namespace Hollyit\LaravelLock;
 
 use Exception;
-use Hollyit\LaravelLock\Drivers\Database;
+use Symfony\Component\Lock\Factory;
 use Hollyit\LaravelLock\Drivers\File;
 use Hollyit\LaravelLock\Drivers\Redis;
+use Hollyit\LaravelLock\Drivers\Database;
 use Illuminate\Contracts\Foundation\Application;
-use Symfony\Component\Lock\Factory;
 
 class Lock
 {
@@ -62,7 +62,7 @@ class Lock
         $driver = $driver ?: $this->config['driver'];
         $driverOptions = $driverOptions ?: $this->config['drivers'][$driver];
         if (! $driverOptions) {
-            throw new Exception("Undefined lock driver options for ".$driver);
+            throw new Exception('Undefined lock driver options for '.$driver);
         }
 
         $driver = $this->getDriver($driver, $driverOptions);

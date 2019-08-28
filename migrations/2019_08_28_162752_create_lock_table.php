@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 class CreateLockTable extends Migration
 {
@@ -18,7 +18,6 @@ class CreateLockTable extends Migration
      */
     public function up()
     {
-
         Schema::create($this->getTable(), function (Blueprint $table) {
             $table->string('id', 64)
                 ->primary();

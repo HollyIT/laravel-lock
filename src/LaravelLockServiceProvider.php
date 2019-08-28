@@ -11,7 +11,6 @@ class LaravelLockServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
         if ($this->app->runningInConsole()) {
             $this->publishes([
                 __DIR__.'/../config/config.php' => config_path('laravel-lock.php'),
@@ -34,7 +33,6 @@ class LaravelLockServiceProvider extends ServiceProvider
 
         // Register the main class to use with the facade
         $this->app->singleton(Lock::class, function () {
-
             return new Lock($this->app, $this->app['config']['lock']);
         });
         $this->app->alias(Lock::class, 'laravel_lock');

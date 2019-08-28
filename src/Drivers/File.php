@@ -2,8 +2,8 @@
 
 namespace Hollyit\LaravelLock\Drivers;
 
-use Hollyit\LaravelLock\Contracts\LockDriver;
 use Symfony\Component\Lock\Store\FlockStore;
+use Hollyit\LaravelLock\Contracts\LockDriver;
 
 class File implements LockDriver
 {

@@ -3,18 +3,17 @@
 namespace Hollyit\LaravelLock\Drivers;
 
 use Exception;
-use Hollyit\LaravelLock\Contracts\LockDriver;
-use Illuminate\Database\ConnectionInterface;
-use Illuminate\Database\Query\Builder;
-use Symfony\Component\Lock\Exception\InvalidArgumentException;
-use Symfony\Component\Lock\Exception\LockConflictedException;
-use Symfony\Component\Lock\Exception\NotSupportedException;
 use Symfony\Component\Lock\Key;
-use Symfony\Component\Lock\Store\ExpiringStoreTrait;
+use Illuminate\Database\Query\Builder;
 use Symfony\Component\Lock\StoreInterface;
+use Illuminate\Database\ConnectionInterface;
+use Hollyit\LaravelLock\Contracts\LockDriver;
+use Symfony\Component\Lock\Store\ExpiringStoreTrait;
+use Symfony\Component\Lock\Exception\NotSupportedException;
+use Symfony\Component\Lock\Exception\LockConflictedException;
+use Symfony\Component\Lock\Exception\InvalidArgumentException;
 
 class Database implements StoreInterface, LockDriver
-
 {
     use ExpiringStoreTrait;
 
@@ -105,7 +104,6 @@ class Database implements StoreInterface, LockDriver
      *
      * @param  \Symfony\Component\Lock\Key  $key
      * @param  float  $ttl  amount of seconds to keep the lock in the store
-     *
      */
     public function putOffExpiration(Key $key, $ttl)
     {
@@ -144,7 +142,6 @@ class Database implements StoreInterface, LockDriver
      */
     public function delete(Key $key)
     {
-
         $this->table()
             ->where([
                 'id'    => $this->getHashedKey($key),
@@ -157,12 +154,10 @@ class Database implements StoreInterface, LockDriver
      * Returns whether or not the resource exists in the storage.
      *
      * @param  \Symfony\Component\Lock\Key  $key
-     * @return boolean
+     * @return bool
      */
     public function exists(Key $key)
     {
-
-
         return $this->table()
             ->where('id', $this->getHashedKey($key))
             ->where('token', $this->getUniqueToken($key))
@@ -178,7 +173,7 @@ class Database implements StoreInterface, LockDriver
      */
     private function getHashedKey(Key $key): string
     {
-        return hash('sha256', (string)$key);
+        return hash('sha256', (string) $key);
     }
 
     private function getUniqueToken(Key $key): string
