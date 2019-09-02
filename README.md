@@ -2,8 +2,6 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/hollyit/laravel-lock.svg?style=flat-square)](https://packagist.org/packages/hollyit/laravel-lock)
 [![Build Status](https://img.shields.io/travis/hollyit/laravel-lock/master.svg?style=flat-square)](https://travis-ci.org/hollyit/laravel-lock)
-[![Quality Score](https://img.shields.io/scrutinizer/g/hollyit/laravel-lock.svg?style=flat-square)](https://scrutinizer-ci.com/g/hollyit/laravel-lock)
-[![Total Downloads](https://img.shields.io/packagist/dt/hollyit/laravel-lock.svg?style=flat-square)](https://packagist.org/packages/hollyit/laravel-lock)
 
 ##Description
 
